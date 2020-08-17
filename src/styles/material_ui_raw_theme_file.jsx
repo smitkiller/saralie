@@ -6,7 +6,7 @@ const rawBaseTheme = {
   ...spacing,
   fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: Colors.brown500, // color tab bar default cyan500
+    primary1Color: Colors.orangeA700, // color tab bar default cyan500
     primary2Color: Colors.cyan700,
     primary3Color: Colors.lightBlack,
     accent1Color: Colors.pinkA200,
@@ -14,7 +14,7 @@ const rawBaseTheme = {
     accent3Color: Colors.grey500,
     secondary1Color:'#3F51B5',
     textColor: Colors.darkBlack,
-    alternateTextColor: Colors.white,// defalut white
+    alternateTextColor: Colors.black,// defalut white
     canvasColor: Colors.white,
     borderColor: Colors.grey300,
     disabledColor: fade(Colors.darkBlack, 0.3)

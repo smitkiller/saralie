@@ -2,6 +2,13 @@ import React,{Component} from 'react';
 import ReactMarkdown from 'react-markdown';
 // ทดลอง ใช้ react-markdown แสดงข้อมูลที่เพิ่มผ่าน react-forms-markdown-editor
 
+
+function Image(props) {
+  return <img {...props} style={{maxWidth: '100%'}} />
+}
+
+
+
 class ShowArticle extends Component{
 
 
@@ -19,6 +26,7 @@ class ShowArticle extends Component{
           
              <ReactMarkdown
               source={article.content}
+              renderers={{image: Image}}
              // escapeHtml={!html}
              />
           </p>

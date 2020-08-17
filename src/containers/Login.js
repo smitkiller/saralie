@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { loginUser } from '../actions/login'
+import {loginWithGoogle} from '../constants/configAuth';
 import Login from '../components/Login'
 import Header from '../components/Header'
 import { reduxForm } from 'redux-form'
@@ -23,7 +24,9 @@ class LoginContainer extends Component{
             ?browserHistory.push('/')
             :<Login
                   login={this.props.login}
-                  handleSubmit={handleSubmit}/>
+                  handleSubmit={handleSubmit}
+                  onGoogle={this.props.onGoogle}
+                  />
         }
     
        </div>
@@ -40,7 +43,7 @@ LoginContainer = reduxForm({
 }
 )(LoginContainer)
 LoginContainer = connect(
-  (state) => ({ login: state.login })
+  (state) => ({ login: state.login }),{onGoogle:loginWithGoogle}
 )(LoginContainer)
 
 export default LoginContainer;

@@ -12,12 +12,12 @@ class BugsCon extends Component{
 		this.props.load();
 	}
 
-	componentDidUpdate(prevProps) {
+	/*componentDidUpdate(prevProps) {
 	  // Typical usage (don't forget to compare props):
 	  if (this.props.bugs !== prevProps.bugs) {
 	    	this.props.load();
 	  }
-	}
+	}*/
 
 	render(){
 		return(

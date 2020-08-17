@@ -21,12 +21,12 @@ class TypesContainer extends Component {
     this.onReloadTypes()
   }
 
-  componentDidUpdate(prevProps) {
+  /*componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (this.props.types !== prevProps.types) {
         this.onReloadTypes()
     }
-  }
+  }*/
 
 
   render() {

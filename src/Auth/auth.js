@@ -1,4 +1,4 @@
-import { ref, firebaseAuth,database,firebaseStorage } from '../constants/configAuth'
+import { ref, firebaseAuth,database,firebaseStorage,firebase } from '../constants/configAuth'
 
 
 export function upLoadToStorage(data,status,name,table){
@@ -67,20 +67,8 @@ export function logout () {
 export function login (email, pw) {
   return firebaseAuth().signInWithEmailAndPassword(email, pw)
 }
-/*
-export function loginWithGoogle(){
-  var provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
-      firebase.auth().signInWithPopup(provider).then(function(result) {
- // This gives you a Google Access Token.
- var token = result.credential.accessToken;
- // The signed-in user info.
- var user = result.user;
-});
-      return user;
-}
-*/
+
+
 export function resetPassword (email) {
   return firebaseAuth().sendPasswordResetEmail(email)
 }

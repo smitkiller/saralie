@@ -1,6 +1,8 @@
 import { login,logout } from '../Auth/auth';
 import { browserHistory } from 'react-router';
 
+
+
 import {
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
@@ -11,6 +13,7 @@ import {
 } from '../constants/actionTypes'
 //import { getInfoByUid } from '../Auth/auth';
 import _ from 'lodash';
+
 
 export function loginUser(values){
   return dispatch=>{
@@ -76,7 +79,7 @@ function loginFailure(){
     type:LOGIN_USER_FAILURE
   }
 }
-function loginSuccess(data){
+export function loginSuccess(data){
  //var user=_.map(data,(val)=>val)
   return{
     type:LOGIN_USER_SUCCESS,

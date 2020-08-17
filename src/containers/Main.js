@@ -15,12 +15,12 @@ class MainCon extends Component{
     //this.onReloadReserve(this.props.params.id);
   }
 
-  componentDidUpdate(prevProps) {
+ /* componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (this.props.articles !== prevProps.articles) {
         this.onReloadArticles();
     }
-  }
+  }*/
 
 	render(){
     //console.log('zzzzzzz===>',this.props.articles)

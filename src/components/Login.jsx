@@ -2,9 +2,7 @@ import React, { PropTypes,Component } from 'react';
 import { FlatButton, TextField } from 'material-ui';
 import { Field } from 'redux-form';
 import Recaptcha from 'react-recaptcha';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import {firebaseAuth} from '../constants/configAuth';
-import { browserHistory } from 'react-router';
+
 
 const renderTextField = props => (
   <div>
@@ -20,10 +18,6 @@ const renderTextField = props => (
 
 
 class Login extends Component{
-  state = { isSignedIn: false }
- /* state={
-    errorLogin:''
-  }*/
 
   constructor(props) {
     super(props)
@@ -34,6 +28,7 @@ class Login extends Component{
     this.state = {
       isVerified: false,
       errorLogin:'',
+      currentUser:null
     }
   }
 
@@ -55,37 +50,8 @@ class Login extends Component{
     }
   }
 
-componentDidMount() {
-  this.unregisterAuthObserver = firebaseAuth().onAuthStateChanged(
-  user =>{this.setState({isSignedIn: !!user})
-  console.log("user", user)
-  });
-}
-
-// Make sure we un-register Firebase observers when the component unmounts.
-componentWillUnmount() {
-this.unregisterAuthObserver();
-}
-        // Configure FirebaseUI.
-      uiConfig = {
-      // Popup signin flow rather than redirect flow.
-      signInFlow: 'popup',
-      // We will display Google , Facebook , Etc as auth providers.
-      signInOptions: [
-      firebaseAuth.GoogleAuthProvider.PROVIDER_ID,
-   // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-   // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-  //  firebase.auth.GithubAuthProvider.PROVIDER_ID,
-  //  firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      ],
-        callbacks: {
-        // Avoid redirects after sign-in.
-        signInSuccess: () => false
-        }
-      };
-
   render(){
-    const {login,handleSubmit}=this.props
+    const {login,handleSubmit,onGoogle}=this.props
     //console.log('mmmm===>',this.state.userSignedIn)
     return(
         <div className="style_login">{this.state.errorLogin}
@@ -121,18 +87,13 @@ this.unregisterAuthObserver();
           }
 
             <FlatButton type='submit' label="Submit" onClick={this.errorText}/>
-{
- /* this.state.isSignedIn
-  ?<div>Login successfully</div>
-  :<div><p>Please sign-in:</p>
-   <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebaseAuth()}/>
-   </div>*/
-}
-            
-      
-
+              
       </div>     
     </form>
+    <div>  
+   {/* <FlatButton type='button' label="LoginWithGoogle" onClick={onGoogle}/>
+ */}
+    </div>
     </div>
     )
   }
@@ -145,4 +106,3 @@ Login.propTypes = {
 }
 
 export default Login;
-

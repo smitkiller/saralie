@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import {loginSuccess} from '../actions/login';
 //require("firebase/functions");
 
 
@@ -16,4 +17,21 @@ export const firebaseStorage=firebase.storage().ref();
 export const database= firebase.database();
 export const ref = firebase.database().ref();
 export const firebaseAuth = firebase.auth;
+
+
 //var functions = firebase.functions();
+
+export const loginWithGoogle= () =>{
+	return dispatch=>{
+	  var provider = new firebase.auth.GoogleAuthProvider();
+	      provider.addScope('profile');
+	      provider.addScope('email');
+	      firebase.auth().signInWithPopup(provider).then(function(result) {
+	     // This gives you a Google Access Token.
+	     var token = result.credential.accessToken;
+	     // The signed-in user info.
+	     //var user = result.user;
+	     dispatch(loginSuccess(result.user.email));
+	    });
+   }
+}

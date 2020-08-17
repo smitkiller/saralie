@@ -19,12 +19,12 @@ class HomesContainer extends Component {
 		this.onLoad()
 	}
 
-	componentDidUpdate(prevProps) {
+	/*componentDidUpdate(prevProps) {
 	  // Typical usage (don't forget to compare props):
 	  if (this.props.types !== prevProps.types) {
 	    	this.onLoad()
 	  }
-	}
+	}*/
 
   render() {
   //	var d = new Date()
