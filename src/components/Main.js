@@ -96,7 +96,9 @@ class Main extends Component{
           titleBackground="gray"
           titleStyle={styles.titleStyle}
         >
+        <Link className="link_no_line" to={{ pathname: `/main/more/${data.title}` }}>
         <img style={styles.img_} src={`${u}${data.image}${l}`}/>
+        </Link>
         </GridTile>
         )
       )
