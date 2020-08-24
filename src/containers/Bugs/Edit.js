@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {EditBug,Header} from '../../components';
+import {EditBug} from '../../components';
 import {connect} from 'react-redux';
 import {loadBug} from '../../actions';
 
@@ -21,7 +21,6 @@ class EditBugCon extends Component{
 		//console.log('bugggg===>',this.props.bug);
 		return(
 			<div>
-				<Header txtTitle="Edit Bug" />
 				{
 					!this.props.bug || !this.props.params.id
 					?<div><h1>Loading...</h1></div>

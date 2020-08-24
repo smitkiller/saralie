@@ -9,6 +9,7 @@ import article from './article';
 import bugs from './bugs';
 import bug from './bug';
 import pictures from './pictures';
+import token from './token';
 
 export default combineReducers({
   form: formReducer,
@@ -20,5 +21,6 @@ export default combineReducers({
   article,
   bugs,
   bug,
-  pictures
+  pictures,
+  token
 })

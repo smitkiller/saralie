@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
-import ReactMarkdown from 'react-markdown';
-import {Card, CardTitle, CardText} from 'material-ui/Card';
+import {
+  mReactMarkdown as ReactMarkdown,
+  mCardTitle as CardTitle,
+  mCardText as CardText,
+  mCard as Card,
+} from '../library';
 
 
 class ListHome extends Component{

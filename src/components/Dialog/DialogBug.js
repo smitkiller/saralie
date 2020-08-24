@@ -1,12 +1,14 @@
 import React,{ Component} from 'react';
-import {Dialog,FlatButton} from 'material-ui';
-//import ActionTouch from 'material-ui/svg-icons/action/touch-app'
-import Clear from 'material-ui/svg-icons/content/clear'
-//import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ReactMarkdown from 'react-markdown';
-import ActionAssignment from 'material-ui/svg-icons/action/assignment';
-import {ListItem} from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
+import {
+  mFlatButton as FlatButton,
+  mDialog as Dialog,
+  mReactMarkdown as ReactMarkdown,
+  mActionAssignment as ActionAssignment,
+  mListItem as ListItem,
+  mClear as Clear,
+  mAvatar as Avatar,
+} from '../../library';
+
 
 const customContentStyle = {
   width: '100%',

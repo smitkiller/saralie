@@ -1,7 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { loadArticles } from '../../actions';
-import {Article,Header} from '../../components';
+import {Article} from '../../components';
 
 class ArticleContainer extends Component {
   static propTypes = {
@@ -35,7 +35,6 @@ class ArticleContainer extends Component {
   render() {
     return (
       <div>
-      <Header txtTitle='Articles'/>
       <Article
         articles={this.props.articles}
         types={this.props.types}

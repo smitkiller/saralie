@@ -96,9 +96,7 @@ export function createType(values){
     addInfo('types',values)
     .then(()=>{
       dispatch(createTypeSuccess())
-           .then(function(res){
-          browserHistory.push('/types')
-      })
+      browserHistory.push('/types')
     })
     .catch((error)=>{
       dispatch(createTypeFailure());
@@ -132,9 +130,7 @@ export function updateType(values){
     updateInfo('types',values,values.id)
     .then(()=>{
       dispatch(updateTypeSuccess())
-          .then(function(res){
-          browserHistory.push('/types')
-      })
+      browserHistory.push('/types')
     })
       .catch((error)=>{
         dispatch(updateTypeFailure());

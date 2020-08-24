@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Header,More} from '../components';
+import {More} from '../components';
 import {getArticleByTitle} from '../actions';
 import {connect} from 'react-redux';
 
@@ -9,7 +9,6 @@ class MoreCon extends Component{
 		 //console.log('props====>',this.props.data)
 		return(
 			<div>
-				<Header txtTitle="More" />
 				{
 					!this.props.data || !this.props.params.id
 					?<div><h1>Loading...</h1></div>

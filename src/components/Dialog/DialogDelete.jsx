@@ -1,6 +1,10 @@
-import React,{ Component } from 'react'
-import {Dialog,FlatButton} from 'material-ui'
-import DeleteIcon from 'material-ui/svg-icons/action/delete-forever'
+import React,{ Component } from 'react';
+import {
+  mFlatButton as FlatButton,
+  mDialog as Dialog,
+  mDeleteIcon as DeleteIcon,
+} from '../../library';
+
 
 class DialogDelete extends Component{
   state={

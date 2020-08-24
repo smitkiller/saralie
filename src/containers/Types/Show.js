@@ -1,5 +1,5 @@
 import React,{Component,PropTypes} from 'react';
-import {ShowType,Header} from '../../components';
+import {ShowType} from '../../components';
 import {getTypeById} from '../../actions';
 import {connect} from 'react-redux';
 
@@ -10,9 +10,6 @@ class ShowTypeCon extends Component{
 	render(){
 		return(
 			<div>
-			<Header
-				txtTitle="แสดงรายละเอียด"
-			/>
 			{!this.props.type?<h1>Loading...</h1>
 				:
 				<ShowType

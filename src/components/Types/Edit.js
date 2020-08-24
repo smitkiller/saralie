@@ -1,9 +1,13 @@
 import React,{Component,PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {reduxForm,Field} from 'redux-form';
 import {updateType} from '../../actions';
-import { FlatButton } from 'material-ui';
-import {TextField} from 'redux-form-material-ui';
+import {
+  mFlatButton as FlatButton,
+  mTextField as TextField,
+  mField as Field,
+  mreduxForm as reduxForm,
+  mconnect as connect,
+} from '../../library';
+
 
 const FIELDS=['category','description']
 

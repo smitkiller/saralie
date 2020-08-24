@@ -141,9 +141,7 @@ export function createArticle(values){
     upLoadToStorage(values,'create',nameImg,'articles')
     .then(()=>{
       dispatch(createArticleSuccess())
-           .then(function(res){
-          browserHistory.push('/articles')
-      })
+      browserHistory.push('/articles')
     })
     .catch((error)=>{
       dispatch(createArticleFailure());
@@ -182,9 +180,7 @@ export function updateArticle(values){
    // updateInfo('articles',values)
     .then(()=>{
       dispatch(updateArticleSuccess())
-          .then(function(res){
-          browserHistory.push('/articles')
-      })
+      browserHistory.push('/articles')
     })
       .catch((error)=>{
         dispatch(updateArticleFailure());

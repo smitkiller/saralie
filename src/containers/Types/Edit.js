@@ -1,7 +1,7 @@
 import React,{Component,PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {loadType} from '../../actions';
-import {EditType,Header} from '../../components';
+import {EditType} from '../../components';
 
 class EditTypeCon extends Component{
 	static propTypes = {
@@ -29,7 +29,6 @@ class EditTypeCon extends Component{
 	//console.log('fffff===>',this.props.tye)
 		return(
 			<div>
-				<Header txtTitle="Edit Category" />
 				{
 					!this.props.tye
 					?<div><h1>Loading...</h1></div>

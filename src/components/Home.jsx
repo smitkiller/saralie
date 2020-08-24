@@ -1,13 +1,16 @@
 import React from 'react'
-import {Card, CardHeader} from 'material-ui/Card';
 import logo from '../img/logoCrewww.png';
-import _ from 'lodash';
-import { Link} from 'react-router';
-//import {DialogBug} from '../components'; old version
 import {ListHome} from '../components';
-import Avatar from 'material-ui/Avatar';
-import ActionAssignment from 'material-ui/svg-icons/action/assignment';
-import {ListItem} from 'material-ui/List';
+import {
+  mActionAssignment as ActionAssignment,
+  mListItem as ListItem,
+  mAvatar as Avatar,
+  mLink as Link,
+  mCardHeader as CardHeader,
+  mCard as Card,
+  m_ as _
+} from '../library';
+
 
 
 const Home = ({bugs}

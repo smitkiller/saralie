@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import {Header} from '../components';
-import {Card, CardHeader} from 'material-ui/Card';
+import {Header} from '../containers';
 import logo from '../img/logoCrewww.png';
-import {ListItem} from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
-import ActionAssignment from 'material-ui/svg-icons/action/assignment';
+import {
+  mActionAssignment as ActionAssignment,
+  mListItem as ListItem,
+  mAvatar as Avatar,
+  mCard as Card,
+  mCardHeader as CardHeader,
+} from '../library';
+
 
 class About extends Component{
 	render(){

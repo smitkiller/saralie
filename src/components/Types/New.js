@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
-import {Field} from 'redux-form';
-import { FlatButton } from 'material-ui';
 import {
-  TextField
-} from 'redux-form-material-ui';
+  mFlatButton as FlatButton,
+  mTextField as TextField,
+  mField as Field,
+} from '../../library';
+
 
 class NewType extends Component{
 

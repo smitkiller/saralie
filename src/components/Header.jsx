@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-//import RaisedButton from 'material-ui/RaisedButton';
-import MenuItem from 'material-ui/MenuItem';
-import { Link} from 'react-router';
 import logo from '../img/logo2.png';
-import {logoutUser} from '../actions';
-//import { firebaseAuth } from '../constants/configAuth';
-import { connect } from 'react-redux';
-//import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
-import { browserHistory } from 'react-router';
 import '../styles/show_txt.css';
-//import BackIcon from 'material-ui/svg-icons/content/backspace';
-//import FlatButton from 'material-ui/FlatButton';
-import _ from 'lodash';
+
+import {
+  mMenuItem as MenuItem,
+  mbrowserHistory as browserHistory,
+  mLink as Link,
+  mAppBar as AppBar,
+  mDrawer as Drawer,
+  m_ as _
+} from '../library';
+
 
 class Header extends Component {
 
@@ -32,16 +29,13 @@ class Header extends Component {
     open:false
   })
 
-  onLogout = () => {
-    this.props.onLogClick()
-  }
 
   goBack=()=>{
     browserHistory.goBack();
   }
 
   render() {
-    const { txtTitle } = this.props
+    const { txtTitle,authed,types,onLogout} = this.props
 
     return (
       <div>  
@@ -66,7 +60,7 @@ class Header extends Component {
           <MenuItem onTouchTap={this.handleClose}>Home</MenuItem>
           </Link>
         {
-          _.map(this.props.types,(data,key)=>(
+          _.map(types,(data,key)=>(
             <Link key={key} className="link_no_line" to={{ pathname: `/main/${key}` }}>
             <MenuItem onTouchTap={this.handleClose}>{data.category}</MenuItem>
             </Link>
@@ -77,7 +71,7 @@ class Header extends Component {
           <MenuItem onTouchTap={this.handleClose}>About</MenuItem>
           </Link>
 
-         {this.props.authed
+         {authed
           ?<div>
           <Link className="link_no_line" to={'/types'}>
           <MenuItem onTouchTap={this.handleClose}>Category</MenuItem>
@@ -91,7 +85,7 @@ class Header extends Component {
           <Link className="link_no_line" to={'/picture'}>
           <MenuItem onTouchTap={this.handleClose}>Picture</MenuItem>
           </Link>
-          <Link className="link_no_line" onClick={this.onLogout}>
+          <Link className="link_no_line" onClick={onLogout}>
           <MenuItem onTouchTap={this.handleClose} >Logout</MenuItem>
           </Link>
           </div>
@@ -108,23 +102,6 @@ class Header extends Component {
  }
 }
 
-function mapStateToProps(state){
-  return{
-    authed:state.login.authed,
-    types:state.types
-  };
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onLogClick: () => {
-      dispatch(logoutUser())
-    }
-  };
-}
-
-
- Header = connect(mapStateToProps,mapDispatchToProps)(Header);
 
 
 export default Header;

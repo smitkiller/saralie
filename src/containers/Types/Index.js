@@ -1,7 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { loadTypes } from '../../actions';
-import {Types,Header} from '../../components';
+import {Types} from '../../components';
 
 class TypesContainer extends Component {
   static propTypes = {
@@ -32,7 +32,6 @@ class TypesContainer extends Component {
   render() {
     return (
       <div>
-      <Header txtTitle='Category'/>
       <Types
         types={this.props.types}
         onReloadTypes={this.onReloadTypes}

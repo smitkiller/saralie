@@ -106,9 +106,7 @@ export function createBug(values){
     addInfo('bugs',data)
     .then(()=>{
       dispatch(createBugSuccess())
-           .then(function(res){
-          browserHistory.push('/bugs')
-      })
+      browserHistory.push('/bugs')
     })
     .catch((error)=>{
       dispatch(createBugFailure());
@@ -151,11 +149,9 @@ export function updateBug(values){
     updateInfo('bugs',data,values.id)
     .then(()=>{
       dispatch(updateBugSuccess())
-          .then(function(res){
-          browserHistory.push('/bugs')
-      })
+      browserHistory.push('/bugs')
     })
-      .catch((error)=>{
+    .catch((error)=>{
         dispatch(updateBugFailure());
       })
   }

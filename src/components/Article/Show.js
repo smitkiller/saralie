@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
-import ReactMarkdown from 'react-markdown';
+import {
+  mReactMarkdown as ReactMarkdown,
+} from '../../library';
+
 // ทดลอง ใช้ react-markdown แสดงข้อมูลที่เพิ่มผ่าน react-forms-markdown-editor
 
 

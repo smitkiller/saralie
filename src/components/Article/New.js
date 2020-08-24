@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
-import {Field} from 'redux-form';
-import { FlatButton } from 'material-ui';
-import MenuItem from 'material-ui/MenuItem';
-import _ from 'lodash';
 import {FieldFileInput} from '../../components';
-import ReactMDE from 'redux-forms-markdown-editor';
 import {
-  SelectField,
-  TextField
-} from 'redux-form-material-ui';
+  mFlatButton as FlatButton,
+  mSelectField as SelectField,
+  mTextField as TextField,
+  mField as Field,
+  mMenuItem as MenuItem,
+  mReactMDE as ReactMDE,
+  m_ as _
+} from '../../library';
+
 
 
 class NewArticle extends Component{

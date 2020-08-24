@@ -1,8 +1,11 @@
 import React,{Component} from 'react';
-import {Field} from 'redux-form';
-import { FlatButton } from 'material-ui';
-import {TextField} from 'redux-form-material-ui';
-import ReactMDE from 'redux-forms-markdown-editor';
+import {
+  mFlatButton as FlatButton,
+  mTextField as TextField,
+  mField as Field,
+  mReactMDE as ReactMDE,
+} from '../../library';
+
 
 class NewBug extends Component{
 	required=(value)=>(value == null ?<span style={{color:"red"}}>required</span> : undefined);

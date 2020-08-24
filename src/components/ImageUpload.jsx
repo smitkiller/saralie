@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { createPage } from '../actions/page'
-import {Field} from 'redux-form';
-import { TextField } from 'material-ui';
+import {
+  mField as Field,
+  mTextField as TextField,
+} from '../library';
+
 
 /*const renderTextField = props => (
   <div>

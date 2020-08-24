@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {NewArticle,Header} from '../../components';
+import {NewArticle} from '../../components';
 import {reduxForm} from 'redux-form';
 import {createArticle} from '../../actions';
 import {connect} from 'react-redux';
@@ -9,7 +9,6 @@ class NewArticleCon extends Component{
 		const {handleSubmit} = this.props;
 		return(
 				<div>
-					<Header txtTitle="New Article"/>
 					<NewArticle
 						handleSubmit={handleSubmit}
 						types={this.props.types}

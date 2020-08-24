@@ -7,7 +7,9 @@ import {
       } from '../components';
 import { 
         Login,
-        CheckAuthed,
+        CheckAdmin,
+        CheckUser,
+        CheckLoginPage,
         Home,
         Types,
         NewType,
@@ -34,48 +36,48 @@ class Routes extends Component {
     return (
       <div>
          <Router history={history}>       
-          <Route path="/" exact component={Home} /> 
+          <Route path="/" exact component={CheckUser(Home,"Home")} /> 
          <Route path='main' >
-            <IndexRoute component={Main} />
-             <Route path=':id'component={Main} /> 
+            <IndexRoute component={CheckUser(Main,"Main")} />
+             <Route path=':id'component={CheckUser(Main,"Main More")} /> 
              <Route path='more'>
-                <Route path=':id' component={More} />
+                <Route path=':id' component={CheckUser(More,"More")} />
               </Route>           
         </Route> 
         <Route path='home' >
-            <IndexRoute component={Home} />
-             <Route path=':id'component={ListHome} />           
+            <IndexRoute component={CheckUser(Home,"Home")} />
+             <Route path=':id'component={CheckUser(ListHome,"Bug More")} />           
         </Route>
-        <Route path='app' component={App} />
-        <Route path='about' component={About} />
-        <Route path="picture" component={CheckAuthed(Picture)} />   
+        <Route path='app' component={CheckUser(App,"App")} />
+        <Route path='about' component={CheckUser(About,"About")} />
+        <Route path="picture" component={CheckAdmin(Picture,"Picture")} />   
         <Route>             
             <Route path='types' >
-                <IndexRoute component={CheckAuthed(Types)} />
-                 <Route path='new'component={CheckAuthed(NewType)} /> 
-                 <Route path=':id'component={CheckAuthed(ShowType)} /> 
+                <IndexRoute component={CheckAdmin(Types,"Types")} />
+                 <Route path='new'component={CheckAdmin(NewType,"New Type")} /> 
+                 <Route path=':id'component={CheckAdmin(ShowType,"Type Display")} /> 
                  <Route path='edit'>
-                      <Route path=':id' component={CheckAuthed(EditType)} />
+                      <Route path=':id' component={CheckAdmin(EditType,"Edit Type")} />
                  </Route>           
             </Route>
             <Route path='articles' >
-                <IndexRoute component={CheckAuthed(Article)} />
-                 <Route path='new'component={CheckAuthed(NewArticle)} /> 
-                 <Route path=':id'component={CheckAuthed(ShowArticle)} /> 
+                <IndexRoute component={CheckAdmin(Article,"Article")} />
+                 <Route path='new'component={CheckAdmin(NewArticle,"New Article")} /> 
+                 <Route path=':id'component={CheckAdmin(ShowArticle,"Article Display")} /> 
                  <Route path='edit'>
-                      <Route path=':id' component={CheckAuthed(EditArticle)} />
+                      <Route path=':id' component={CheckAdmin(EditArticle,"Edit Article")} />
                  </Route>           
             </Route>  
             <Route path='bugs' >
-                <IndexRoute component={CheckAuthed(Bugs)} />
-                 <Route path='new'component={CheckAuthed(NewBug)} />   
+                <IndexRoute component={CheckAdmin(Bugs,"Bugs")} />
+                 <Route path='new'component={CheckAdmin(NewBug,"New Bug")} />   
                  <Route path='edit'>
-                      <Route path=':id' component={CheckAuthed(EditBug)} />
+                      <Route path=':id' component={CheckAdmin(EditBug,"Edit Bug")} />
                  </Route>           
             </Route> 
           </Route>
-          <Route path="l0gin" component={Login} />
-          <Route path='*' component={NotFound} />     
+          <Route path="l0gin" component={CheckLoginPage(Login,"Login")} />
+          <Route path='*' component={CheckUser(NotFound,"Not Found")} />     
           </Router>
       </div>
     )

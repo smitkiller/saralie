@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {NewType,Header} from '../../components';
+import {NewType} from '../../components';
 import {reduxForm} from 'redux-form';
 import {createType} from '../../actions';
 
@@ -9,7 +9,6 @@ class NewTypeCon extends Component{
 		const {handleSubmit} = this.props;
 		return(
 				<div>
-					<Header txtTitle="New Category"/>
 					<NewType
 						handleSubmit={handleSubmit}
 					/>

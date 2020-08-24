@@ -1,33 +1,30 @@
 import React, { Component } from 'react'
-import { loginUser } from '../actions/login'
-import {loginWithGoogle} from '../constants/configAuth';
-import Login from '../components/Login'
-import Header from '../components/Header'
-import { reduxForm } from 'redux-form'
-import { connect } from 'react-redux'
-import { browserHistory } from 'react-router';
+import { loginUser,loadRecaptcha } from '../actions/login'
+import {Login} from '../components'
+import {
+  mconnect as connect,
+  mreduxForm as reduxForm,
+} from '../library';
+
 
 const FIELDS = ['email', 'password']
 
+
 class LoginContainer extends Component{
-  
+
+  componentDidMount(){
+    this.props.onRecaptcha();
+}
   render () {
     const { handleSubmit } = this.props
-   
+  // console.log('recaptcha',this.props.login)
     return (
        <div>
-      <Header txtTitle="Login"/>
-      {
-        !this.props.login
-        ?<div><h1>Loading...</h1></div>
-        :this.props.login.authed===true
-            ?browserHistory.push('/')
-            :<Login
-                  login={this.props.login}
-                  handleSubmit={handleSubmit}
-                  onGoogle={this.props.onGoogle}
-                  />
-        }
+          <Login
+              login={this.props.login}
+              handleSubmit={handleSubmit}
+              />
+        
     
        </div>
     );
@@ -35,6 +32,7 @@ class LoginContainer extends Component{
 }
 LoginContainer = reduxForm({
     form: 'login',
+    enableReinitialize : true, 
     fields: FIELDS,
     validate: (values, props) =>
       FIELDS.reduce((errors, field) =>
@@ -43,7 +41,11 @@ LoginContainer = reduxForm({
 }
 )(LoginContainer)
 LoginContainer = connect(
-  (state) => ({ login: state.login }),{onGoogle:loginWithGoogle}
+  (state,ownProps) => ({ login: state.login,
+    initialValues:{
+      token:state.token,
+    }
+ }),{onRecaptcha:loadRecaptcha}
 )(LoginContainer)
 
 export default LoginContainer;

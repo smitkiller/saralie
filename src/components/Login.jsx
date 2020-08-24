@@ -1,7 +1,9 @@
-import React, { PropTypes,Component } from 'react';
-import { FlatButton, TextField } from 'material-ui';
-import { Field } from 'redux-form';
-import Recaptcha from 'react-recaptcha';
+import React, {Component } from 'react';
+import {
+  mField as Field,
+  mTextField as TextField,
+  mFlatButton as FlatButton,
+} from '../library';
 
 
 const renderTextField = props => (
@@ -15,52 +17,25 @@ const renderTextField = props => (
   </div>
 )
 
+const renderTextInput = props => (
+  <div>
+    <input
+      type={props.type}
+      {...props.input} />
+  </div>
+)
 
 
 class Login extends Component{
 
-  constructor(props) {
-    super(props)
-
-    this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
-    this.verifyCallback = this.verifyCallback.bind(this);
-
-    this.state = {
-      isVerified: false,
-      errorLogin:'',
-      currentUser:null
-    }
-  }
-
- errorText=()=>{
-    this.setState({
-      errorLogin:this.props.login.statusText
-    })
- }
-
-  recaptchaLoaded() {
-    console.log('capcha successfully loaded');
-  }
-
-  verifyCallback(response) {
-    if (response) {
-      this.setState({
-        isVerified: true
-      })
-    }
-  }
-
   render(){
-    const {login,handleSubmit,onGoogle}=this.props
-    //console.log('mmmm===>',this.state.userSignedIn)
+    const {login,handleSubmit}=this.props
     return(
-        <div className="style_login">{this.state.errorLogin}
-
-    <form
-      onSubmit={handleSubmit}
-      className='form'>
+   <div className="style_login">
+    <p>{login.statusText}</p>
+    <form onSubmit={handleSubmit} className="g-recaptcha">
       <div>
-        <Field
+        <Field   
          name="email"
          type="text"
          label="E-mail"
@@ -74,35 +49,18 @@ class Login extends Component{
        component={renderTextField} />
       </div>
       <div>
-       <Recaptcha
-            sitekey="6LceRLMUAAAAAPQHwqQoxyQ142GbZVr_3hRPPOLw"
-            render="explicit"
-            onloadCallback={this.recaptchaLoaded}
-            verifyCallback={this.verifyCallback}
-          />
-          {
-            !this.state.isVerified
-            ?<div></div>
-            :<div></div>
-          }
-
-            <FlatButton type='submit' label="Submit" onClick={this.errorText}/>
+          <Field name="token" type="hidden"  component={renderTextInput} />
+      </div>
+      <div>
+            <FlatButton type='submit' label="Submit" />
               
       </div>     
     </form>
     <div>  
-   {/* <FlatButton type='button' label="LoginWithGoogle" onClick={onGoogle}/>
- */}
     </div>
     </div>
     )
   }
-}
-Login.propTypes = {
-  fields: PropTypes.array,
-  email: PropTypes.object,
-  password: PropTypes.object,
-  handleSubmit: PropTypes.func
 }
 
 export default Login;

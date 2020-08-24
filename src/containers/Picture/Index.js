@@ -1,7 +1,7 @@
 import React,{Component,PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { loadPictures,createPicture } from '../../actions';
-import {Picture,Header} from '../../components';
+import {Picture} from '../../components';
 import {reduxForm} from 'redux-form';
 
 class PicCon extends Component{
@@ -23,7 +23,6 @@ class PicCon extends Component{
 		//console.log('pin--->',this.state.pic)
 		return(
 			<div>
-			<Header txtTitle="Picture" />
 			<Picture
 				pictures={this.props.pictures}
         handleSubmit={handleSubmit}

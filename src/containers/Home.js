@@ -1,6 +1,6 @@
 import React, { Component,PropTypes } from 'react';
 import { connect } from 'react-redux';
-import {Home,Header} from '../components';
+import {Home} from '../components';
 import {loadTypes,loadBugs} from '../actions';
 
 class HomesContainer extends Component {
@@ -10,7 +10,6 @@ class HomesContainer extends Component {
 	}
 	
 	onLoad=()=>{
-		this.props.load();
 		this.props.loadB();
 	}
 
@@ -32,7 +31,6 @@ class HomesContainer extends Component {
     
     return (
 		<div>
-          <Header txtTitle='Home'/>
           <Home bugs={this.props.bugs}/>
     	</div>
     )
@@ -41,7 +39,7 @@ class HomesContainer extends Component {
 
 HomesContainer=connect(
 	(state)=>({types:state.types,bugs:state.bugs}),
-	{load:loadTypes,loadB:loadBugs}
+	{loadB:loadBugs}
 )(HomesContainer)
 
 export default HomesContainer;

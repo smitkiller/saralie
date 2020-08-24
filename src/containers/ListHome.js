@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Header,ListHome} from '../components';
+import {ListHome} from '../components';
 import {getBugById} from '../actions';
 import {connect} from 'react-redux';
 import {loadBug} from '../actions';
@@ -16,7 +16,6 @@ class ListHomeCon extends Component{
 	render(){
 		return(
 			<div>
-				<Header txtTitle="Bug" />
 				{
 					!this.props.bug || !this.props.params.id
 					?<div><h1>Loading...</h1></div>

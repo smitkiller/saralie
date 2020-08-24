@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {loadArticle} from '../../actions';
-import {EditArticle,Header} from '../../components';
+import {EditArticle} from '../../components';
 
 class EditArticleCon extends Component{
 	/*static propTypes = {
@@ -30,7 +30,6 @@ class EditArticleCon extends Component{
 //console.log('ssss--->',this.props.article)
 		return(
 			<div>
-				<Header txtTitle="Edit Article" />
 				{
 					!this.props.article || !this.props.types
 					?<div><h1>Loading...</h1></div>

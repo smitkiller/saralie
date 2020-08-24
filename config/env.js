@@ -22,6 +22,7 @@ function getClientEnvironment(publicUrl) {
       'PROJECT_ID':JSON.stringify(process.env.PROJECT_ID),
       'STORAGE_BUCKET':JSON.stringify(process.env.STORAGE_BUCKET),
       'MESSAGING_SENDER_ID':JSON.stringify(process.env.MESSAGING_SENDER_ID),
+      'SECRET_KEY':JSON.stringify(process.env.SECRET_KEY),
       // Useful for resolving the correct path to static assets in `public`.
       // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
       // This should only be used as an escape hatch. Normally you would put

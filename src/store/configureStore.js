@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware,compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
-import { apiMiddleware } from 'redux-api-middleware';
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 import {persistStore,autoRehydrate} from 'redux-persist';
@@ -10,7 +9,7 @@ import {persistStore,autoRehydrate} from 'redux-persist';
 
 
 export default (history, initialState) => {
-  const middlewares = [thunk, apiMiddleware, routerMiddleware(history)]
+  const middlewares = [thunk, routerMiddleware(history)]
 
   if(process.env.NODE_ENV !== 'production'){
     middlewares.push(createLogger())
@@ -22,7 +21,7 @@ export default (history, initialState) => {
     compose(applyMiddleware(...middlewares),autoRehydrate())
   )
 
-persistStore(store)
+//persistStore(store)    remember state
 
     if (module.hot) {
     module.hot.accept('../reducers', () => {

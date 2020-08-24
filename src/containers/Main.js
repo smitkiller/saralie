@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Header,Main} from '../components';
+import {Main} from '../components';
 import {connect} from 'react-redux';
 import { loadArticles,getCategoryById } from '../actions';
 
@@ -26,7 +26,6 @@ class MainCon extends Component{
     //console.log('zzzzzzz===>',this.props.articles)
 		return(
 			<div>
-				<Header txtTitle="Main" />
         {
           !this.props.articles.length
           ?<div><h1>Loading...</h1></div>

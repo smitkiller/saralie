@@ -1,10 +1,17 @@
-import React,{PropTypes} from 'react'
-import { Link } from 'react-router'
-import FlatButton from 'material-ui/FlatButton'
-import AddIcon from 'material-ui/svg-icons/image/add-to-photos'
-import EditIcon from 'material-ui/svg-icons/image/edit'
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table'
-import _ from 'lodash';
+import React,{PropTypes} from 'react';
+import {
+  mFlatButton as FlatButton,
+  mAddIcon as AddIcon,
+  mEditIcon as EditIcon,
+  mLink as Link,
+  mTable as Table, 
+  mTableBody as TableBody, 
+  mTableHeader as TableHeader, 
+  mTableHeaderColumn as TableHeaderColumn, 
+  mTableRow as TableRow, 
+  mTableRowColumn as TableRowColumn,
+  m_ as _
+} from '../../library';
 
 
 const state = {

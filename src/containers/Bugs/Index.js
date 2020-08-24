@@ -1,5 +1,5 @@
 import React,{Component,PropTypes} from 'react';
-import {Bugs,Header} from '../../components';
+import {Bugs} from '../../components';
 import {loadBugs} from '../../actions';
 import {connect} from 'react-redux';
 
@@ -22,7 +22,6 @@ class BugsCon extends Component{
 	render(){
 		return(
 			<div>
-			  <Header txtTitle="Solution Bugs"/>
 			  <Bugs 
 			  	bugs={this.props.bugs}
 			  />

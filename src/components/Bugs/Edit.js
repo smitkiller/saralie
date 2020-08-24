@@ -1,10 +1,14 @@
 import React,{Component} from 'react';
-import {reduxForm,Field} from 'redux-form';
-import {connect} from 'react-redux';
 import {updateBug} from '../../actions';
-import { FlatButton } from 'material-ui';
-import {TextField} from 'redux-form-material-ui';
-import ReactMDE from 'redux-forms-markdown-editor';
+import {
+  mFlatButton as FlatButton,
+  mTextField as TextField,
+  mField as Field,
+  mreduxForm as reduxForm,
+  mconnect as connect,
+  mReactMDE as ReactMDE,
+} from '../../library';
+
 
 const FIELDS =['issue','detail','solution'];
 

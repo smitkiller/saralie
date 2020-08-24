@@ -1,14 +1,19 @@
-import React,{Component,PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {Field,reduxForm} from 'redux-form';
+import React,{Component} from 'react';
 import {updateArticle,getRandom} from '../../actions';
-import { FlatButton } from 'material-ui';
-import {TextField,SelectField} from 'redux-form-material-ui';
-import _ from 'lodash';
-import MenuItem from 'material-ui/MenuItem';
-import ReactMDE from 'redux-forms-markdown-editor';
 import {FieldFileInput} from '../../components';
 import { firebaseStorage } from '../../constants/configAuth';
+import {
+  mFlatButton as FlatButton,
+  mSelectField as SelectField,
+  mTextField as TextField,
+  mField as Field,
+  mreduxForm as reduxForm,
+  mconnect as connect,
+  mMenuItem as MenuItem,
+  mReactMDE as ReactMDE,
+  m_ as _
+} from '../../library';
+
 
 const FIELDS=['title','category','status','content','image']
 

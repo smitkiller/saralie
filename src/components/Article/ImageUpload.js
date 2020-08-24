@@ -1,7 +1,11 @@
 /*Test File*/
 import React, { Component } from 'react'
-import {Field} from 'redux-form';
-import { FlatButton,TextField } from 'material-ui';
+import {
+  mFlatButton as FlatButton,
+  mTextField as TextField,
+  mField as Field,
+} from '../../library';
+
 
 
 class ImageUpload extends Component {
