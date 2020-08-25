@@ -80,7 +80,7 @@ class Header extends Component {
           <MenuItem onTouchTap={this.handleClose} >Article</MenuItem>
           </Link>
            <Link className="link_no_line" to={'/bugs'}>
-          <MenuItem onTouchTap={this.handleClose} >Bugs Fix</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} >Bugs</MenuItem>
           </Link>
           <Link className="link_no_line" to={'/picture'}>
           <MenuItem onTouchTap={this.handleClose}>Picture</MenuItem>

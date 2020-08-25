@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-import {ListHome} from '../components';
+import {BugMore} from '../components';
 import {getBugById} from '../actions';
 import {connect} from 'react-redux';
 import {loadBug} from '../actions';
 
-class ListHomeCon extends Component{
+class BugMoreCon extends Component{
 
 	shouldComponentUpdate(nextProps){
 		return this.props.bug!==nextProps.bug;
@@ -19,7 +19,7 @@ class ListHomeCon extends Component{
 				{
 					!this.props.bug || !this.props.params.id
 					?<div><h1>Loading...</h1></div>
-					:<ListHome 
+					:<BugMore 
 						bug={this.props.bug}
 					/>
 				}
@@ -30,9 +30,9 @@ class ListHomeCon extends Component{
 }
 
 
-ListHomeCon=connect(
+BugMoreCon=connect(
 	(state)=>({bug:state.bug}),
 	{load:loadBug}
-	)(ListHomeCon)
+	)(BugMoreCon)
 
-export default ListHomeCon;
+export default BugMoreCon;

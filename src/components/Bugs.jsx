@@ -25,7 +25,7 @@ const Home = ({bugs}
 { 
     _.map(bugs,(data,key)=>(
       <div key={key}>
-      <Link className="link_no_line" to={{ pathname: `/home/${key}` }}>
+      <Link className="link_no_line" to={{ pathname: `/fixbugs/${key}` }}>
           <ListItem
             //onTouchTap={this.handleOpen}
             leftAvatar={<Avatar icon={<ActionAssignment />}  />}
