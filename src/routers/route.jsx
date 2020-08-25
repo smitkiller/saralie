@@ -7,9 +7,7 @@ import {
       } from '../components';
 import { 
         Login,
-        CheckAdmin,
         CheckUser,
-        CheckLoginPage,
         FixBugs,
         Types,
         NewType,
