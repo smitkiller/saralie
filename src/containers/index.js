@@ -1,6 +1,6 @@
 export {default as Login} from './Login'
 export {default as Header} from './Header'
-export {default as Home} from './Home'
+export {default as FixBugs} from './Bugs'
 export {default as CheckAdmin} from './CheckAdmin'
 export {default as CheckUser} from './CheckUser'
 export {default as CheckLoginPage} from './CheckLoginPage'

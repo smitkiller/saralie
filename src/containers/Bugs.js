@@ -1,9 +1,9 @@
 import React, { Component,PropTypes } from 'react';
 import { connect } from 'react-redux';
-import {Home} from '../components';
+import {FixBugs} from '../components';
 import {loadTypes,loadBugs} from '../actions';
 
-class HomesContainer extends Component {
+class FixBugsContainer extends Component {
 	static propTypes={
 		loadTypes:PropTypes.func,
 		loadBugs:PropTypes.func
@@ -31,15 +31,15 @@ class HomesContainer extends Component {
     
     return (
 		<div>
-          <Home bugs={this.props.bugs}/>
+          <FixBugs bugs={this.props.bugs}/>
     	</div>
     )
   }
 }
 
-HomesContainer=connect(
+FixBugsContainer=connect(
 	(state)=>({types:state.types,bugs:state.bugs}),
 	{loadB:loadBugs}
-)(HomesContainer)
+)(FixBugsContainer)
 
-export default HomesContainer;
+export default FixBugsContainer;

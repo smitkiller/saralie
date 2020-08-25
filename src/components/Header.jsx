@@ -67,8 +67,8 @@ class Header extends Component {
             )
           )
         }
-          <Link className="link_no_line" to={'/about'}>
-          <MenuItem onTouchTap={this.handleClose}>About</MenuItem>
+          <Link className="link_no_line" to={'/fixbugs'}>
+          <MenuItem onTouchTap={this.handleClose}>Fix Bugs</MenuItem>
           </Link>
 
          {authed
@@ -80,7 +80,7 @@ class Header extends Component {
           <MenuItem onTouchTap={this.handleClose} >Article</MenuItem>
           </Link>
            <Link className="link_no_line" to={'/bugs'}>
-          <MenuItem onTouchTap={this.handleClose} >Bugs</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} >Bugs Fix</MenuItem>
           </Link>
           <Link className="link_no_line" to={'/picture'}>
           <MenuItem onTouchTap={this.handleClose}>Picture</MenuItem>

@@ -2,15 +2,15 @@ import React,{Component} from 'react';
 import { Router,Route,IndexRoute } from 'react-router';
 import {
         NotFound,
-        About,
-        App
+        App,
+        Home
       } from '../components';
 import { 
         Login,
         CheckAdmin,
         CheckUser,
         CheckLoginPage,
-        Home,
+        FixBugs,
         Types,
         NewType,
         ShowType,
@@ -49,7 +49,7 @@ class Routes extends Component {
              <Route path=':id'component={CheckUser(ListHome,"Bug More")} />           
         </Route>
         <Route path='app' component={CheckUser(App,"App")} />
-        <Route path='about' component={CheckUser(About,"About")} />
+        <Route path='fixbugs' component={CheckUser(FixBugs,"Fix Bugs")} />
         <Route path="picture" component={CheckAdmin(Picture,"Picture")} />   
         <Route>             
             <Route path='types' >
