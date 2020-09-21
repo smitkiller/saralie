@@ -1,12 +1,20 @@
 import React,{Component} from 'react';
 import {More} from '../components';
-import {getArticleByTitle} from '../actions';
+import {getArticleById,loadArticles} from '../actions';
 import {connect} from 'react-redux';
 
 class MoreCon extends Component{
+  onReloadArticles = () => {
+    this.props.onLoadArticles()
+  }
 
+
+  componentDidMount() {
+    this.onReloadArticles();
+    //this.onReloadReserve(this.props.params.id);
+  }
 	render(){
-		 //console.log('props====>',this.props.data)
+		 //console.log('props====>',this.props.params.id)
 		return(
 			<div>
 				{
@@ -24,8 +32,7 @@ class MoreCon extends Component{
 
 MoreCon=connect(
   (state,ownProps)=>(
-  {data:getArticleByTitle(state,ownProps.params.id)}
-  )
+  {data:getArticleById(state,ownProps.params.id)}),{ onLoadArticles: loadArticles}
 )(MoreCon)
 
 export default MoreCon;

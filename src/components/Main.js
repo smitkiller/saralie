@@ -89,14 +89,14 @@ class Main extends Component{
           subtitle={<span>{data.content}</span>}
  //       actionIcon={<DialogShow id={data.title} />} old version
           actionIcon={
-            <Link className="link_no_line" to={{ pathname: `/main/more/${data.title}` }}>
+            <Link className="link_no_line" to={{ pathname: `/main/more/${data.key}` }}>
                 <FlatButton title="More" icon={<More/>}  />
             </Link>
             }
           titleBackground="gray"
           titleStyle={styles.titleStyle}
         >
-        <Link className="link_no_line" to={{ pathname: `/main/more/${data.title}` }}>
+        <Link className="link_no_line" to={{ pathname: `/main/more/${data.key}` }}>
         <img style={styles.img_} src={`${u}${data.image}${l}`}/>
         </Link>
         </GridTile>

@@ -15,7 +15,7 @@ import {
 } from '../../library';
 
 
-const FIELDS=['title','category','status','content','image']
+const FIELDS=['title','category','status','content']
 
 class EditArticle extends Component{
     constructor () {
@@ -45,7 +45,7 @@ class EditArticle extends Component{
     var l="?alt=media";
     //console.log('------<',article)
 		return(
-			 <div style={{maxWidth: 380, maxHeight: 400, margin: 'auto'}}>
+			 <div className="editView">
 				<form onSubmit={handleSubmit} >
               <div>
                     <Field 

@@ -2,7 +2,10 @@ import { ref, firebaseAuth,database,firebaseStorage,firebase } from '../constant
 
 
 export function upLoadToStorage(data,status,name,table){
-  const imgName=name+'.'+data.image.name.split('.').pop();
+  const imgName=''
+  if(data.image){
+    const imgName=name+'.'+data.image.name.split('.').pop();
+  }
   var d = new Date();
   const val={
         'title':data.title,
@@ -13,12 +16,29 @@ export function upLoadToStorage(data,status,name,table){
         'date':d.toString()
 
   }
-	return firebaseStorage.child(`images/${imgName}`).put(data.image)
-  .then(()=>{
-    status==='create'
-      ?addInfo(table,val)
-      :updateInfo(table,val,data.id)
-  })
+  const val2={
+      'title':data.title,
+      'status':data.status,
+      'category':data.category,
+      'content':data.content,
+      'date':d.toString()
+  }
+
+  if(status==='create'){
+    return firebaseStorage.child(`images/${imgName}`).put(data.image)
+    .then(()=>{
+        addInfo(table,val)
+    })
+  }else{
+    if(data.image){
+        return firebaseStorage.child(`images/${imgName}`).put(data.image)
+        .then(()=>{
+            updateInfo(table,val,data.id)
+        })
+    }else{
+        return updateInfo(table,val2,data.id)
+    }
+  }
 }
 
 export function upLoadPicture(data,name,table){

@@ -50,7 +50,7 @@ export default class FieldFileInput  extends Component{
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+      $imagePreview = (<div className="err_role">Please select an Image for Preview</div>);
     }
     const { input: { value } } = this.props
     const {input,label, required, meta, } = this.props  //whatever props you send to the component from redux-form Field
@@ -70,7 +70,7 @@ export default class FieldFileInput  extends Component{
         ?<p></p>
         :<div>
           <h1>Old</h1>
-          <img src={this.props.url}/>
+          <img src={this.props.url} className="imgPreview"/>
           <h1>New</h1>
         </div>
       }
